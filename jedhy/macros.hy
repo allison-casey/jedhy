@@ -17,6 +17,11 @@
   (if (!= s "") (unfixed-mangle s) (str)))
 
 ;; * Tag Macros
+(deftag ^ [form]
+  `(of ~@form))
+
+(deftag of [form]
+  `(of ~@form))
 
 (deftag t [form]
   "Cast evaluated form to a tuple. Useful via eg. #t(-> x f1 f2 ...)."
